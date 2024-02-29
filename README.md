@@ -1,6 +1,9 @@
 # Meu Portifólio
 
 > Demonstração do projeto.
+* [Live Project](https://jramoss02.github.io/Jramos-portfolio/) - Acesse aqui o projeto finalizado.
+
+
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
