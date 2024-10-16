@@ -1,394 +1,514 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ramos portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">José Ramos</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#experience">Experiência</a></li>
-          <li><a href="#projects">Projetos</a></li>
-          <li><a href="#contact">Contato</a></li>
-        </ul>
-      </div>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="jramos">
+    <title>José Ramos | Portfolio</title>
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Modal com fundo escurecido */
+        .image-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1050;
+        }
+
+        /* Conteúdo do modal */
+        .image-modal-content {
+        position: relative;
+        max-width: 80%;
+        max-height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        /* Estilo das imagens no carrossel */
+        .carousel-inner img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 8px;
+        }
+
+        /* Botões do carrossel */
+        .carousel-control-prev, .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        z-index: 1060;
+        }
+
+        .carousel-control-prev {
+        left: 10px;
+        }
+
+        .carousel-control-next {
+        right: 10px;
+        }
+
+        .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        }
+
+        .close-btn:hover {
+        color: #ddd;
+        }
+      </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
+        <div class="container">
+            <a class="navbar-brand" href="#">José Ramos</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#service">Serviço</a>
+                    </li>             
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Gráfico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>          
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">José Ramos</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+
+    <header class="header" id="home">
+        <div class="container">
+            <div class="infos">
+                <h6 class="subtitle">Olá, eu sou</h6>
+                <h6 class="title">José Ramos</h6>
+                <p>Desenvolvedor e Designer WEB</p>
+
+                <div class="buttons pt-3">
+                    <button class="btn btn-dark rounded">Meu curriculo</button>
+                </div>      
+
+                <div class="socials mt-4">
+                    <a class="social-item" href="javascript:void(0)"><i class="ti-linkedin"></i></a>
+                    <a class="social-item" href="javascript:void(0)"><i class="ti-github"></i></a>
+                </div>
+            </div>              
+            <div class="img-holder">
+                
+            </div>      
+        </div>  
+
+        <div class="widget">
+            <div class="widget-item">
+                <h2>5+</h2>
+                <p>Clientes Satisfeitos</p>
+            </div>
+            <div class="widget-item">
+                <h2>15+</h2>
+                <p>Projetos completados</p>
+            </div>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">Sobre</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experiência</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projetos</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contato</a></li>
+    </header>
+
+    <section id="about" class="section mt-3">
+        <div class="container mt-5">
+            <div class="row text-center text-md-left">
+                <div class="col-md-3">
+                    <img src="assets/imgs/avatar.png" alt="" class="img-thumbnail mb-4">
+                </div>
+                <div class="pl-md-4 col-md-9">
+                    <h6 class="title">José Ramos</h6>
+                    <p class="subtitle">Desenvolvedor e Web designer</p>
+                    <p>Tenho 22 anos, sou formado em desenvolvimento de sistemas e atualmente estudo administração. Possuo experiencia em desenvolvimento e design de paginas WEB com HTML, CSS, JS, Wordpress, FIGMA e diversas outras ferramentas.</p>
+                    <p>Atualmente faço a venda de projetos como freelancer, o desenvolvimento é feito com base no perfil da marca e nos objetivos que o cliente tem com o site em questão.</p>
+                    <button class="btn btn-primary rounded mt-3">Meu curriculo</button>                   
+                </div>
+            </div>
         </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="Foto de perfil do José Ramos" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Olá, me chamo</p>
-        <h1 class="title">José Ramos</h1>
-        <p class="section__text__p2">Frontend Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/Curriculo_JoséRamos.pdf')"
-          >
-            Meu Curriculo
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Informações de contato
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="Meu perfil do LinkedIn"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/josé-roberto-ramos/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="Meu perfil no GitHub"
-            class="icon"
-            onclick="location.href='https://github.com/jramoss02'"
-          />
-        </div>
-      </div>
     </section>
-    <section id="about">
-      <p class="section__text__p1">Saiba mais</p>
-      <h1 class="title">Sobre mim</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Foto de perfil"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Icone de experiência"
-                class="icon"
-              />
-              <h3>Experiência</h3>
-              <p>Mais de 1 ano <br />desenvolvimento Frontend</p>
+
+    <section id="service" class="section">
+        <div class="container text-center">
+            <h6 class="section-title mb-4">Meus Serviços</h6>
+            <div class="row">
+                <div class="col-sm-6 col-md-3 mb-4">
+                    <div class="custom-card card border">
+                        <div class="card-body">
+                            <i class="icon ti-crown"></i>
+                            <h5>UI/UX Design</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 mb-4">
+                    <div class="custom-card card border">
+                        <div class="card-body">
+                            <i class="icon ti-desktop"></i>
+                            <h5>Web Design</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 mb-4">
+                    <div class="custom-card card border">
+                        <div class="card-body">
+                            <i class="icon ti-instagram"></i>
+                            <h5>Design Gráfico</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 mb-4">
+                    <div class="custom-card card border">
+                        <div class="card-body">
+                            <i class="icon ti-bar-chart"></i>
+                            <h5>SEO</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Icone de educação"
-                class="icon"
-              />
-              <h3>Educação</h3>
-              <p>ADS na FACENS<br />Diversos cursos de design UI/UX</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Atualmente com 21 anos, possuo experiência na área de desenvolvimento e design de páginas WEB e busco sempre me atualizar sobre as tecnologias do mercado.
-            </p>
-          </div>
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
     </section>
-    <section id="experience">
-      <p class="section__text__p1">Veja as minhas</p>
-      <h1 class="title">Habilidades</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Habilidades Frontend</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML & CSS</h3>
-                  <p>Avançado</p>
+
+    <section class="section">
+        <div class="container text-center">
+            <h6 class="section-title mb-4">Minhas habilidades</h6>
+            <div class="row text-left">
+                <div class="col-sm-6">
+                    <h6 class="mb-3">Photoshop</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>89%</span></div>
+                    </div>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Avançado</p>
+                <div class="col-sm-6">
+                    <h6 class="mb-3">Wordpress</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>83%</span></div>
+                    </div>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>FIGMA</h3>
-                  <p>Intermediário</p>
+                <div class="col-sm-6">
+                    <h6 class="mb-3">Figma</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 95%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>95%</span></div>
+                    </div>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>React</h3>
-                  <p>Intermediário</p>
+                <div class="col-sm-6">
+                    <h6 class="mb-3">JavaScript</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>90%</span></div>
+                    </div>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node</h3>
-                  <p>Intermediário</p>
+                <div class="col-sm-6">
+                    <h6 class="mb-3">HTML & CSS</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>90%</span></div>
+                    </div>
                 </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Habilidades Backend</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>C & C++</h3>
-                  <p>Intermediário</p>
+                <div class="col-sm-6">
+                    <h6 class="mb-3">Python</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 65%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>90%</span></div>
+                    </div>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>MySQL</h3>
-                  <p>Intermediário</p>
+                <div class="col-sm-6">
+                    <h6 class="mb-3">React</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>90%</span></div>
+                    </div>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PHP</h3>
-                  <p>Intermediário</p>
+                <div class="col-sm-6">
+                    <h6 class="mb-3">C++</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>90%</span></div>
+                    </div>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Intermediário</p>
+                <div class="col-sm-6">
+                    <h6 class="mb-3">PhP</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>90%</span></div>
+                    </div>
                 </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediário</p>
+                <div class="col-sm-6">
+                    <h6 class="mb-3">MySQL</h6>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>90%</span></div>
+                    </div>
                 </div>
-              </article>
-            </div>
-          </div>
+            </div>  
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
     </section>
-    <section id="projects">
-      <p class="section__text__p1">Meus mais recentes</p>
-      <h1 class="title">Projetos</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/finance-control.jpg"
-                alt="Project 1"
-                class="project-img"
-              />
+
+    <section id="portfolio" class="section">
+        <div class="container text-center">
+            <h6 class="section-title mb-4">Meus trabalhos gráficos</h6>
+            <p class="mb-5 pb-4">Projetos artísticos de design gráfico <br> e trabalhos para marcas</p>
+    
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/folio-1.png" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>StayTrueToYourself</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/folio-2.png" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>Stars</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/folio-3.png" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>EmptyHeart</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/folio-4.png" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>FaceYourDemons</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/folio-5.png" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>LikeaBullet</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/folio-6.png" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>BL00D (C4)</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/folio-7.png" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>GIN4 (C4)</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="img-wrapper">
+                        <img src="assets/imgs/folio-8.png" alt="">
+                        <div class="overlay">
+                            <div class="overlay-infos">
+                                <h5>Dafoe (C4)</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4"></div>
             </div>
-            <h2 class="experience-sub-title project-title">Finance Control (REACT)</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jramoss02/financeControl-react'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/task manager.jpg"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Task Manager (REACT)</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jramoss02/taskManager-react'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/comment view.jpg"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Comment View (CSS)</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jramoss02/commentView-CSS'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/cardapio.jpg"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Cardápio (HTML)</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jramoss02/Cardapio-HTML'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/parallax-effect.jpg"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Parallax Effect (CSS)</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jramoss02/parallaxEffect-CSS'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
     </section>
-    <section id="contact">
-      <p class="section__text__p1">Entre em</p>
-      <h1 class="title">Contato</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Icone de email"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:02.jrsramos@gmail.com">02.jrsramos@gmail.com</a></p>
+    
+    
+    
+
+    <section id="blog" class="section">
+        <div class="container text-center">
+            <h6 class="section-title mb-4">Ultimos trabalhos</h6>
+            <p class="mb-5 pb-4">Confira aqui os ultimos trabalhos que realizei <br> na parte de desenvolvimento web.</p>
+
+            <div class="row text-left">
+                <!-- Cards -->
+                <div class="col-md-4">
+                    <div class="card border mb-4">
+                      <img src="assets/imgs/lp1.png" alt="Thumbnail 1" class="card-img-top w-100 open-carousel" data-id="1" style="cursor:pointer;">
+                      <div class="card-body">
+                        <h5 class="card-title">MDV Tech (Landing Page)</h5>
+                        <p>Landing Page feita para direcionar usuarios ao site de vendas da loja.</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border mb-4">
+                    <img src="assets/imgs/p1.png" alt="Thumbnail 2" class="card-img-top w-100 open-carousel" data-id="2" style="cursor:pointer;">
+                    <div class="card-body">
+                        <h5 class="card-title">MDV Store</h5>
+                        <p>Site de vendas de eletronicos construido focando em acessibilidade, pesquisa rapida e facil por voz.
+
+                            Dono fazia as vendas diretamente pelo whatsapp, atualmente com o site, o cliente pode verificar a disponibilidade dos produtos diretamente pela plataforma, selecionar o que gostaria, e o pedido será realizado automaticamente pelo whatsapp, onde o cliente só vai precisar realizar o pagamento.</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border mb-4">
+                    <img src="assets/imgs/sr2.png" alt="Thumbnail 2" class="card-img-top w-100 open-carousel" data-id="3" style="cursor:pointer;">
+                    <div class="card-body">
+                        <h5 class="card-title">Sr. Navalha</h5>
+                        <p>Projeto construido para barbearia, onde o interessado precisava de uma plataforma para fazer a cobrança automatica dos planos de assinatura da barbearia.</p>
+                    </div>
+                    </div>
+                </div>
+                <div id="imageModal" class="image-modal" style="display:none;">
+                    <div class="image-modal-content">
+                    <span class="close-btn">&times;</span>
+                    <div id="carouselImages" class="carousel">
+                        <div class="carousel-inner" id="carouselInner">
+                        </div>
+                        <button class="carousel-control-prev" id="prevBtn">
+                        &#10094;
+                        </button>
+                        <button class="carousel-control-next" id="nextBtn">
+                        &#10095;
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="Icone do LinkedIn"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/josé-roberto-ramos/">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#experience">Experiência</a></li>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#contact">Contato</a></li>
-          </ul>
-        </div>
-      </nav>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+    </section>    
+    
+    <script>
+        // Conjuntos de imagens para cada card
+        const imageSets = {
+          1: [
+            'assets/imgs/lp1.png',
+            'assets/imgs/lp2.png',
+            'assets/imgs/lp3.png',
+            'assets/imgs/lp4.png',
+            'assets/imgs/lp5.png'
+          ],
+
+          2: [
+            'assets/imgs/p1.png',
+            'assets/imgs/p2.png',
+            'assets/imgs/p3.png',
+            'assets/imgs/p4.png'
+          ],
+
+          3: [
+            'assets/imgs/sr1.png',
+            'assets/imgs/sr2.png',
+          ]
+        };
+      
+        let currentIndex = 0; // Índice da imagem atual
+        let currentImages = []; // Armazena o conjunto de imagens ativo
+      
+        // Função para abrir o modal com um conjunto de imagens
+        function openModal(imageSet) {
+          currentImages = imageSet; // Define o conjunto de imagens atual
+          currentIndex = 0; // Inicia com a primeira imagem
+          updateCarousel(); // Atualiza o carrossel com a imagem inicial
+          const modal = document.getElementById('imageModal');
+          modal.style.display = 'flex'; // Mostra o modal
+        }
+      
+        // Função para atualizar o carrossel com a imagem atual
+        function updateCarousel() {
+          const carouselInner = document.getElementById('carouselInner');
+          carouselInner.innerHTML = ''; // Limpa o conteúdo do carrossel
+      
+          // Adiciona as imagens ao carrossel
+          currentImages.forEach((image, index) => {
+            const activeClass = index === currentIndex ? 'active' : '';
+            const carouselItem = `
+              <div class="carousel-item ${activeClass}">
+                <img src="${image}" alt="Image ${index + 1}">
+              </div>
+            `;
+            carouselInner.innerHTML += carouselItem;
+          });
+        }
+      
+        // Função para navegar para a próxima imagem
+        function nextImage() {
+          currentIndex = (currentIndex + 1) % currentImages.length;
+          updateCarousel();
+        }
+      
+        // Função para navegar para a imagem anterior
+        function prevImage() {
+          currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+          updateCarousel();
+        }
+      
+        // Função para fechar o modal
+        function closeModal() {
+          const modal = document.getElementById('imageModal');
+          modal.style.display = 'none'; // Esconde o modal
+        }
+      
+        // Detecta clique nos cards e abre o modal com o conjunto de imagens correto
+        document.querySelectorAll('.open-carousel').forEach(card => {
+          card.addEventListener('click', function() {
+            const id = this.getAttribute('data-id'); // Obtém o ID do card clicado
+            openModal(imageSets[id]); // Abre o modal com as imagens do card
+          });
+        });
+      
+        // Detecta clique no botão de fechar
+        document.querySelector('.close-btn').addEventListener('click', closeModal);
+      
+        // Detecta clique nos botões de navegação
+        document.getElementById('nextBtn').addEventListener('click', nextImage);
+        document.getElementById('prevBtn').addEventListener('click', prevImage);
+      
+        // Fecha o modal ao clicar fora da imagem
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+          if (e.target === this) {
+            closeModal();
+          }
+        });
+      </script>
+      
+
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</body>
 </html>
