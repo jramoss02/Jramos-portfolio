@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
 	<link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* Modal com fundo escurecido */
         .image-modal {
         position: fixed;
         top: 0;
@@ -22,7 +21,6 @@
         z-index: 1050;
         }
 
-        /* Conteúdo do modal */
         .image-modal-content {
         position: relative;
         max-width: 80%;
@@ -32,14 +30,12 @@
         align-items: center;
         }
 
-        /* Estilo das imagens no carrossel */
         .carousel-inner img {
         max-width: 100%;
         max-height: 100%;
         border-radius: 8px;
         }
 
-        /* Botões do carrossel */
         .carousel-control-prev, .carousel-control-next {
         position: absolute;
         top: 50%;
@@ -361,7 +357,6 @@
             <p class="mb-5 pb-4">Confira aqui os ultimos trabalhos que realizei <br> na parte de desenvolvimento web.</p>
 
             <div class="row text-left">
-                <!-- Cards -->
                 <div class="col-md-4">
                     <div class="card border mb-4">
                       <img src="assets/imgs/lp1.png" alt="Thumbnail 1" class="card-img-top w-100 open-carousel" data-id="1" style="cursor:pointer;">
@@ -411,7 +406,6 @@
     </section>    
     
     <script>
-        // Conjuntos de imagens para cada card
         const imageSets = {
           1: [
             'assets/imgs/lp1.png',
@@ -434,24 +428,21 @@
           ]
         };
       
-        let currentIndex = 0; // Índice da imagem atual
-        let currentImages = []; // Armazena o conjunto de imagens ativo
-      
-        // Função para abrir o modal com um conjunto de imagens
+        let currentIndex = 0;
+        let currentImages = [];
+
         function openModal(imageSet) {
-          currentImages = imageSet; // Define o conjunto de imagens atual
-          currentIndex = 0; // Inicia com a primeira imagem
-          updateCarousel(); // Atualiza o carrossel com a imagem inicial
+          currentImages = imageSet;
+          currentIndex = 0;
+          updateCarousel();
           const modal = document.getElementById('imageModal');
-          modal.style.display = 'flex'; // Mostra o modal
+          modal.style.display = 'flex';
         }
       
-        // Função para atualizar o carrossel com a imagem atual
         function updateCarousel() {
           const carouselInner = document.getElementById('carouselInner');
-          carouselInner.innerHTML = ''; // Limpa o conteúdo do carrossel
+          carouselInner.innerHTML = '';
       
-          // Adiciona as imagens ao carrossel
           currentImages.forEach((image, index) => {
             const activeClass = index === currentIndex ? 'active' : '';
             const carouselItem = `
@@ -463,40 +454,33 @@
           });
         }
       
-        // Função para navegar para a próxima imagem
         function nextImage() {
           currentIndex = (currentIndex + 1) % currentImages.length;
           updateCarousel();
         }
-      
-        // Função para navegar para a imagem anterior
+
         function prevImage() {
           currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
           updateCarousel();
         }
       
-        // Função para fechar o modal
         function closeModal() {
           const modal = document.getElementById('imageModal');
-          modal.style.display = 'none'; // Esconde o modal
+          modal.style.display = 'none';
         }
       
-        // Detecta clique nos cards e abre o modal com o conjunto de imagens correto
         document.querySelectorAll('.open-carousel').forEach(card => {
           card.addEventListener('click', function() {
-            const id = this.getAttribute('data-id'); // Obtém o ID do card clicado
-            openModal(imageSets[id]); // Abre o modal com as imagens do card
+            const id = this.getAttribute('data-id');
+            openModal(imageSets[id]);
           });
         });
       
-        // Detecta clique no botão de fechar
         document.querySelector('.close-btn').addEventListener('click', closeModal);
       
-        // Detecta clique nos botões de navegação
         document.getElementById('nextBtn').addEventListener('click', nextImage);
         document.getElementById('prevBtn').addEventListener('click', prevImage);
       
-        // Fecha o modal ao clicar fora da imagem
         document.getElementById('imageModal').addEventListener('click', function(e) {
           if (e.target === this) {
             closeModal();
